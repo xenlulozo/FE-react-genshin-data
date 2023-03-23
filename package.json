@@ -1,0 +1,113 @@
+{
+  "name": "myapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "0.21.4",
+    "genshin-api": "^2.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "7.2.5",
+    "react-router-dom": "5.3.0",
+    "react-scripts": "5.0.1",
+    "react-text-truncate": "^0.19.0",
+    "react-toastify": "8.0.2",
+    "redux": "4.1.1",
+    "sass": "^1.58.3",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "babel",
+    "react",
+    "flowtype"
+  ],
+  "rules": {
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    "react/react-in-jsx-scope": 1,
+    "indent": [
+      "error",
+      4
+    ],
+    "react/jsx-indent": [
+      "error",
+      4
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      4
+    ],
+    "consistent-return": "off",
+    "flowtype/no-types-missing-file-annotation": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "import/prefer-default-export": "off",
+    "react/default-props-match-prop-types": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-closing-tag-location": "off",
+    "react/jsx-filename-extension": "off",
+    "react/no-string-refs": "off",
+    "react/no-unused-prop-types": "off",
+    "react/no-unused-state": "off",
+    "react/prefer-stateless-function": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/sort-comp": "off",
+    "max-len": "off",
+    "no-case-declarations": "off",
+    "no-console": "off",
+    "no-mixed-operators": "off",
+    "no-nested-ternary": "off",
+    "no-shadow": "off",
+    "no-use-before-define": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": "off",
+    "prefer-promise-reject-errors": "off"
+  },
+  "env": {
+    "jest": true
+  },
+  "globals": {
+    "fetch": false,
+    "Response": false,
+    "React": true
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^7.32.2"
+  }
+}

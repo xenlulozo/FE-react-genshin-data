@@ -1,0 +1,96 @@
+
+
+.listBaseSkillContent{
+    // position: relative;
+    // border: 1px solid red;
+    height: 60%;
+    width: 100%;
+// text-align: center;
+        color: #9CA3AF;
+   
+    // .contentSkill:nth-child(odd){
+    //     z-index: 1000;
+    //     background-color: yellow;
+     
+    // }
+.button{
+    span{
+        font-weight: bold;
+    }
+    // button{
+    //     width: 30px;
+    //     height: 30px;
+    //     text-align: center;
+        
+    // }
+   
+margin-top: 20px;
+margin-bottom: 20px;
+    .leftButton{
+        color: #9CA3AF;
+        font-size: 15px;
+        margin-right: 10px;
+        border-radius: 100%;
+        border: 1px solid #9CA3AF;
+        background-color: rgba(255, 255, 255, 0);
+    }
+    .rightButton{
+        margin-left: 10px;
+        font-size: 15px;
+        border-radius: 100%;
+        border: 1px solid #9CA3AF;
+        background-color: rgba(255, 255, 255, 0);
+        color: #9CA3AF;
+    }
+}
+
+.contentSkill:nth-child(even ){
+    background-color: rgb(44 49 63);
+    // border: 1px solid #e5e7eb;
+    z-index: 1;
+   
+    
+}
+    .contentSkill{
+        border-radius: 2px;
+        margin-left: 5%;
+        font-size: 9px;
+        // position: relative;
+        // background-color: red;
+        // color: red;
+        // border: 1px solid red;
+        height: 50px;
+        width: 90%;
+        // padding-top: 17px;
+        // padding-bottom: 17px;
+        align-items: center;
+display: flex;
+justify-content: space-between;
+        .leftContent{
+            // position: absolute;
+            // float: left;
+       color: #9CA3AF;
+            // border: 1px solid red;
+
+            // left: 3%;
+            margin-left:3%;
+            font-size: 16px;
+        //   text-align: left;
+        //   width: 49%;
+        z-index: 10011111;
+        }
+        .rightContent{
+            // position: absolute;
+            // float: right;
+            right: 3%;
+            color: #9CA3AF;
+            font-size: 16px;
+            margin-right: 3%;
+            // text-align: right;
+            // border: 1px solid red;
+         z-index: 10011111;
+            // width: 49%;
+         
+        }
+    }
+}

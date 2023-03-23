@@ -1,0 +1,50 @@
+// .price4{
+
+    // display: flex;
+    // width: 200px;
+    // white-space: nowrap;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // word-wrap: break-word;
+// }
+.price2{
+display: flex;
+    // border: 1px solid red;
+    margin-bottom: 2%;
+    font-size: 15px;
+}
+.price4{
+    // display: flex;
+    // position: absolute;
+
+        margin-bottom: 2%;
+        font-size: 15px;
+        // top:0%;
+        .conatainer{
+            position: relative;
+            // border: 1px solid red;
+            // display: flex;
+            
+            .content4{
+                
+                // border: 1px solid red;
+                width: 80%;
+position: relative;
+margin-top: -19px;
+left: 7%;
+            }
+        }
+    }
+   
+   .numberOfSet{
+    background-color: #4b5563b3;
+    color: #9ca3af;
+    width: 19px;
+    text-align: center;
+    margin-right: 2%;
+    border-radius: 3px;
+
+    
+    // height: 50px;
+   }
+// }

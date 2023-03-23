@@ -1,0 +1,29 @@
+.list-todo-container{
+    align-items: center;
+.add-todo{
+    align-items: center;
+    .todo-child{
+        border-bottom: 1px solid gray;
+        margin-top: 5px;
+    }
+    .add{
+        margin: 0 10px;
+    }
+}
+.list-todo-content{
+    align-items: center;
+    // text-align: left;
+    .todo-child{
+        border-bottom: 1px solid gray;
+        margin-top: 5px;
+    }
+    .todo-child:first-child{
+        border-top: 1px solid gray;
+    }
+    .edit{
+        margin: 0 10px;
+    }
+}
+
+}
+
