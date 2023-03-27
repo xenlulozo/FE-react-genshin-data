@@ -32,6 +32,9 @@
     align-items: center;
                 display: flex;
                 justify-content: center;
+                .myObject.selected {
+                    background-color: rgba(#7d8084 ,0.5);
+                  }
                 div{
                     z-index: 10000000;
                     width: 7%;
@@ -371,14 +374,56 @@ width: 100%;
 .tailentContainer{
     width: 90%;
     margin: 0 auto;
+    
+    .materialTotal{
+        // border: 1px solid yellow;
+        // background-color: rgba(35,39,52,1);
+        background-color: rgba(#2c313f, 1);
+
+        
+        min-height: 80px;
+        // display: flex;
+
+        // justify-content: space-between;
+        align-items: center;
+        // div{
+            display: grid;
+            grid-template-columns: repeat(11,minmax(0,1fr));
+
+    // grid-template-rows: repeat(5,minmax 1fr);
+width: 100%;
+            // justify-content: space-between; 
+        // }
+        .viewsTotal{
+            font-size: 18px;
+            // border: 1px solid red;
+            width: 100%;
+            position: relative;
+            img{
+                width: 60%;
+            }
+            span{
+                position: absolute;
+                width: 100%;
+                left: 0%;
+                bottom: 0%;
+             
+            }
+        }
+    }
     .talentContent{
+    color: #9ca3af;
+    font-size: 20px;
+        
         width: 100%;
         display: grid;
         grid-template-columns: repeat(10,minmax(0,1fr));
+        background-color: rgba(#2c313f, 1);
+      
         .childContent{
             // min-height: 100px;
             // background-color: yellow;
-            border: 1px solid yellow;
+            // border: 1px solid yellow;
             display: flex;
             align-items: center;
             // text-align: center;
@@ -423,6 +468,9 @@ width: 100%;
                 
             }
         }
+        // .talentContent:nth-child(1){
+        //     background-color: red;
+        // }
         .childContent:nth-child(3){
             grid-column: 3/ span 2;
         }
@@ -447,4 +495,8 @@ width: 100%;
         }
     
     }
+    .talentContent:nth-child(odd){
+                    background-color: rgba(35,39,52,1)
+
+     }
 }

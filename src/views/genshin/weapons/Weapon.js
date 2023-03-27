@@ -34,6 +34,7 @@ class Weapon extends React.Component {
           {weapon &&
             weapon.length > 0 &&
             weapon.map((item, index) => {
+              // console.log(item);
               return <ChildWeapon weapon={item} />;
             })}
           {/* <ChildWeapon weapon={"thrilling-tales-of-dragon-slayers"} /> */}

@@ -54,7 +54,7 @@ class CharacterMaterial extends React.Component {
       });
     await axios
       .get(
-        `https://genshin-builds.com/_next/data/ZtyUh7jVf6D4v2efOc9XN/en/character/${this.state.characterName}.json`
+        `https://genshin-builds.com/_next/data/jZHEk4BPFIAIlj0Ym6krL/en/character/${this.state.characterName}.json`
       )
       .then((response) => {
         this.setState({
@@ -68,6 +68,9 @@ class CharacterMaterial extends React.Component {
       });
   }
   swapNameToImg = (name) => {
+    name = name.toLowerCase().replace(/'/g, "_");
+    name = name.replace(/ /g, "_");
+    // console.log(name);
     return name.replace(/_/g, "-");
   };
   setSelectIndexStat = (index) => {
@@ -77,13 +80,27 @@ class CharacterMaterial extends React.Component {
       selectIndexStat: index,
     });
   };
+  handleObjectClick(index) {
+    this.setState({
+      selectedObject: index,
+    });
+  }
 
+  getObjectClassName(index) {
+    if (index === this.state.selectedObject) {
+      return "selected";
+    }
+    return "";
+  }
   render() {
     // console.log(this.swapNameToImg("shivada_jade_sliver"));
     let { ascensionMaterial, selectIndexStat, talentMaterial } = this.state;
-    // console.log("state", ascensionMaterial);
+    // console.log("state", talentMaterial);
     let totalMora = 0;
     let totalMaterial = [];
+    let talentTotalMora = 0;
+    let totalTalentMaterial = [];
+    let totalTalent = {};
     let total = {};
     // let selectIndexStat = 0;
     let status = "";
@@ -96,13 +113,70 @@ class CharacterMaterial extends React.Component {
           <div className="content">
             <div className="statBase">
               <div className=" routeStat">
-                <div onClick={() => this.setSelectIndexStat(0)}>Lv.1-20</div>
-                <div onClick={() => this.setSelectIndexStat(1)}>Lv.20-40</div>
-                <div onClick={() => this.setSelectIndexStat(2)}>Lv.40-50</div>
-                <div onClick={() => this.setSelectIndexStat(3)}>Lv.50-60</div>
-                <div onClick={() => this.setSelectIndexStat(4)}>Lv.60-70</div>
-                <div onClick={() => this.setSelectIndexStat(5)}>Lv.70-80</div>
-                <div onClick={() => this.setSelectIndexStat(6)}>Lv.80-90</div>
+                <div
+                  onClick={() => {
+                    this.setSelectIndexStat(0);
+                    this.handleObjectClick(1);
+                  }}
+                  // onClick={() => this.handleObjectClick(1)}
+                  className={`myObject ${this.getObjectClassName(1)}`}
+                >
+                  Lv.1-20
+                </div>
+                <div
+                  className={`myObject ${this.getObjectClassName(2)}`}
+                  onClick={() => {
+                    this.setSelectIndexStat(1);
+                    this.handleObjectClick(2);
+                  }}
+                >
+                  Lv.20-40
+                </div>
+                <div
+                  className={`myObject ${this.getObjectClassName(3)}`}
+                  onClick={() => {
+                    this.setSelectIndexStat(2);
+                    this.handleObjectClick(3);
+                  }}
+                >
+                  Lv.40-50
+                </div>
+                <div
+                  className={`myObject ${this.getObjectClassName(4)}`}
+                  onClick={() => {
+                    this.setSelectIndexStat(3);
+                    this.handleObjectClick(4);
+                  }}
+                >
+                  Lv.50-60
+                </div>
+                <div
+                  className={`myObject ${this.getObjectClassName(5)}`}
+                  onClick={() => {
+                    this.setSelectIndexStat(4);
+                    this.handleObjectClick(5);
+                  }}
+                >
+                  Lv.60-70
+                </div>
+                <div
+                  className={`myObject ${this.getObjectClassName(6)}`}
+                  onClick={() => {
+                    this.setSelectIndexStat(5);
+                    this.handleObjectClick(6);
+                  }}
+                >
+                  Lv.70-80
+                </div>
+                <div
+                  className={`myObject ${this.getObjectClassName(7)}`}
+                  onClick={() => {
+                    this.setSelectIndexStat(6);
+                    this.handleObjectClick(7);
+                  }}
+                >
+                  Lv.80-90
+                </div>
               </div>
               <div className="statDetail">
                 <span></span>
@@ -259,9 +333,9 @@ class CharacterMaterial extends React.Component {
                             <>
                               <div className="imgContainer">
                                 <img
-                                  src={`https://api.genshin.dev/materials/local-specialties/${
+                                  src={`https://api.genshin.dev/materials/local-specialties/${this.swapNameToImg(
                                     item["mat3"] && item["mat3"]["id"]
-                                  }`}
+                                  )}`}
                                 ></img>
                                 <span>
                                   {" "}
@@ -363,7 +437,42 @@ class CharacterMaterial extends React.Component {
             {talentMaterial &&
               talentMaterial.length > 0 &&
               talentMaterial.map((item, index) => {
-                console.log(item);
+                // console.log("item", item);
+
+                talentTotalMora += item.cost;
+
+                // console.log(item);
+
+                {
+                  item.items &&
+                    item.items.length > 0 &&
+                    item.items.map((inte, index) => {
+                      {
+                        let temp = {};
+                        // {
+                        //   console.log(this.swapNameToImg(inte.name));
+                        // }
+                        temp = {
+                          ...temp,
+                          id: inte.name,
+                          amount: inte.amount,
+                          status:
+                            index == 0
+                              ? "talent-book"
+                              : index == 1
+                              ? "common-ascension"
+                              : index == 2
+                              ? "talent-boss"
+                              : "talent-book",
+                        };
+                        totalTalentMaterial.push(temp);
+                      }
+                    });
+                  // {
+                  //   console.log(totalTalentMaterial);
+                  // }
+                }
+
                 return (
                   <div className="talentContent">
                     <div className="childContent">
@@ -411,8 +520,8 @@ class CharacterMaterial extends React.Component {
                             <img
                               src={`https://api.genshin.dev/materials/talent-boss/${
                                 item.items[2] &&
-                                item.items[2].id &&
-                                this.swapNameToImg(item.items[2].id)
+                                item.items[2].name &&
+                                this.swapNameToImg(item.items[2].name)
                               }.png`}
                             ></img>
                             <span>{item.items[2] && item.items[2].amount}</span>
@@ -437,11 +546,50 @@ class CharacterMaterial extends React.Component {
                         {item.items[3] && item.items[3].name}{" "}
                       </div>
                     </div>
-                    {/* <div className="childContent">7</div>
-                    <div className="childContent">8</div> */}
                   </div>
                 );
               })}
+            <div className="materialTotal">
+              <span> Total:</span>
+              <div className="viewsTotal">
+                <img src="https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/materials/mora.png?strip=all&quality=100&w=64"></img>
+
+                <span> {talentTotalMora}</span>
+              </div>
+
+              {Object.entries(this.countAmounts(totalTalentMaterial)) &&
+                Object.entries(this.countAmounts(totalTalentMaterial)).map(
+                  (item, index) => {
+                    // console.log(item);
+
+                    return (
+                      <>
+                        {/* {index !== 0 ? ( */}
+                        <>
+                          {" "}
+                          {/* {console.log(totalTalentMaterial)} */}
+                          {totalTalentMaterial &&
+                            totalTalentMaterial.length > 0 &&
+                            totalTalentMaterial.map((ite, index) => {
+                              if (Object.values(ite).includes(item[0]))
+                                status = ite.status;
+                              // console.log(ite.status);
+                            })}
+                          {console.log(item && item)}
+                          <div className="viewsTotal">
+                            <span>{item[1]}</span>
+                            <img
+                              src={`https://api.genshin.dev/materials/${status}/${this.swapNameToImg(
+                                item[0]
+                              )}`}
+                            ></img>
+                          </div>
+                        </>
+                      </>
+                    );
+                  }
+                )}
+            </div>
           </div>
         </div>
       </>

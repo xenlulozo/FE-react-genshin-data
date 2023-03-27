@@ -20,6 +20,8 @@ export default class Nav extends React.Component {
         {/* <NavLink to="/test">test</NavLink> */}
         <NavLink to="/artifact">Artifacts</NavLink>
         <NavLink to="/weapon">Weapons</NavLink>
+        <NavLink to="/WatchChar">Watch Character</NavLink>
+
         {/* <BrowserRouter>
           <Link className="active" to="/">
             Home

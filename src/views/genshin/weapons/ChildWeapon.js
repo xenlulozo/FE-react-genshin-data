@@ -14,7 +14,10 @@ class ChildWeapon extends React.Component {
     let data = await axios.get(
       `https://api.genshin.dev/weapons/${this.props.weapon}`
     );
-    let name = this.props.weapon.replace(/-/g, "_");
+    // console.log(this.props.weapon);
+    let name = this.props.weapon;
+    // name = name.replace(/'/g, "");
+    // name = name.render(/-/g, "");
     // console.log(data.data);
     this.setState({
       weapon: data.data,
@@ -49,7 +52,8 @@ class ChildWeapon extends React.Component {
               }}
             >
               <img
-                src={`https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/weapons/${name}.png?strip=all&quality=100&w=208`}
+                src={`https://api.genshin.dev/weapons/${name}/icon.png`}
+                // src={`https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/weapons/${name}.png?strip=all&quality=100&w=208`}
               ></img>
               {weapon.rarity == 5 ? (
                 <>

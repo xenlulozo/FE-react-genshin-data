@@ -60,7 +60,7 @@ class BaseWeapon extends React.Component {
     let name = this.props.match.params.weapon.replace(/-/g, "_");
     let cnt = [];
     let list = await axios.get(
-      `https://genshin-builds.com/_next/data/ZtyUh7jVf6D4v2efOc9XN/en/weapon/${name}.json`
+      `https://genshin-builds.com/_next/data/jZHEk4BPFIAIlj0Ym6krL/en/weapon/${name}.json`
     );
 
     this.setState({
@@ -122,6 +122,7 @@ class BaseWeapon extends React.Component {
     }
   };
   swapName = (name) => {
+    // name = name.replace(/(\b\w*?)s\b/g, "$1-s");
     return name.replace(/_/g, "-");
   };
   sumMora = (array) => {
@@ -251,7 +252,7 @@ class BaseWeapon extends React.Component {
             </div>
           </div>
           <div className="materialContainer">
-            {/* {console.log(baseWeapon.ascensions && baseWeapon.ascensions)} */}
+            {console.log(baseWeapon.ascensions && baseWeapon.ascensions)}
             <div className="containerMaterial">
               {baseWeapon.ascensions &&
                 baseWeapon.ascensions.length > 0 &&
@@ -285,6 +286,7 @@ class BaseWeapon extends React.Component {
                           {item.materials &&
                             item.materials.length > 0 &&
                             item.materials.map((item, index) => {
+                              // console.log(item);
                               nameSwap = this.swapName(item.id);
                               // let temp = {};
                               // temp["name"] = item.name;

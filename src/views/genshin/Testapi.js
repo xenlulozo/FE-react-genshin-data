@@ -39,7 +39,7 @@ class AyakaInfo extends React.Component {
       });
     await axios
       .get(
-        `https://genshin-builds.com/_next/data/ZtyUh7jVf6D4v2efOc9XN/en/character/${this.state.characterName}.json`
+        `https://genshin-builds.com/_next/data/jZHEk4BPFIAIlj0Ym6krL/en/character/${this.state.characterName}.json`
       )
       .then((response) => {
         this.setState({ ayaka: response.data });

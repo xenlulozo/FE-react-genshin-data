@@ -28,6 +28,7 @@ class DetailMaterial extends React.Component {
     let nameCoppy = name.toLowerCase();
     // console.log(nameCoppy);
     name = nameCoppy.replace(/ /g, "-");
+    name = name.replace(/'/g, "-");
     return name;
   };
   render() {
@@ -43,12 +44,16 @@ class DetailMaterial extends React.Component {
     return (
       <>
         <div className="totalMaterial">
+          {/* {console.log(count)} */}
           {Object.keys(count).map((name) => (
             <div key={name}>
+              {/* {console.log(name)} */}
               {origin &&
                 origin.length > 0 &&
                 origin.map((item, index) => {
-                  if (Object.values(item).includes(name)) status = item.status;
+                  if (Object.values(item).includes(name)) {
+                    status = item.status;
+                  }
                 })}
               {/* {console.log(Object.values(item).includes(name), name)} */}
               <div

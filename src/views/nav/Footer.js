@@ -8,7 +8,9 @@ class Footer extends React.Component {
       <>
         <div className="footer">
           Footer
-          <p>Made by Hieu with Love</p>
+          <p>
+            Made by Hieu with Love <span>&#9825;</span>
+          </p>
           <p>No Component</p>
         </div>
       </>

@@ -21,9 +21,12 @@ import Weapon from "./genshin/weapons/Weapon";
 
 import BaseWeapon from "./genshin/weapons/BaseWeapon";
 import Testcss from "./genshin/artifact/Testcss";
+
+import CharacterInfo from "./genshin/CheckMyAccount/CharacterInfo";
 // import component from "./Example/component";
 
 function App() {
+  const uid = 853050206;
   return (
     <BrowserRouter forceRefresh={true}>
       <div className="App">
@@ -80,6 +83,9 @@ function App() {
               path="/weapon/:weapon"
               render={({ match }) => <BaseWeapon key={match.params.weapon} />}
             />
+            <Route>
+              <CharacterInfo uid={uid} />
+            </Route>
           </Switch>
 
           <Footer />
