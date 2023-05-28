@@ -7,20 +7,20 @@ export default class Nav extends React.Component {
   render() {
     return (
       <div className="topnav">
-        <NavLink to="/" activeclassName="active" exact={true}>
+        {/* <NavLink to="/" activeclassName="active" exact={true}>
           Home
         </NavLink>
 
         <NavLink to="/todo">Todo</NavLink>
 
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/about">About</NavLink> */}
 
-        <NavLink to="/user">List user</NavLink>
+        {/* <NavLink to="/user">List user</NavLink> */}
         <NavLink to="/character"> Character</NavLink>
         {/* <NavLink to="/test">test</NavLink> */}
         <NavLink to="/artifact">Artifacts</NavLink>
         <NavLink to="/weapon">Weapons</NavLink>
-        <NavLink to="/WatchChar">Watch Character</NavLink>
+        {/* <NavLink to="/WatchChar">Watch Character</NavLink> */}
 
         {/* <BrowserRouter>
           <Link className="active" to="/">

@@ -9,6 +9,7 @@ class CharacterMaterial extends React.Component {
     totalMaterial: {},
     selectIndexStat: 0,
     talentMaterial: {},
+    isSmallScreen: window.innerWidth < 768,
   };
 
   generateData(ascensionMaterial) {
@@ -54,7 +55,7 @@ class CharacterMaterial extends React.Component {
       });
     await axios
       .get(
-        `https://genshin-builds.com/_next/data/jZHEk4BPFIAIlj0Ym6krL/en/character/${this.state.characterName}.json`
+        `https://genshin-builds.com/_next/data/vLisg9Szv-n-2aBZeviKc/en/character/${this.state.characterName}.json`
       )
       .then((response) => {
         this.setState({
@@ -94,7 +95,8 @@ class CharacterMaterial extends React.Component {
   }
   render() {
     // console.log(this.swapNameToImg("shivada_jade_sliver"));
-    let { ascensionMaterial, selectIndexStat, talentMaterial } = this.state;
+    let { isSmallScreen, ascensionMaterial, selectIndexStat, talentMaterial } =
+      this.state;
     // console.log("state", talentMaterial);
     let totalMora = 0;
     let totalMaterial = [];
@@ -112,19 +114,23 @@ class CharacterMaterial extends React.Component {
           <h2>Stats</h2>
           <div className="content">
             <div className="statBase">
-              <div className=" routeStat">
+              <div className=" routeStat col-12">
                 <div
                   onClick={() => {
                     this.setSelectIndexStat(0);
                     this.handleObjectClick(1);
                   }}
                   // onClick={() => this.handleObjectClick(1)}
-                  className={`myObject ${this.getObjectClassName(1)}`}
+                  className={` items-stat col-xxl-1 col-3 my-1 mx-1 px-3  myObject ${this.getObjectClassName(
+                    1
+                  )}`}
                 >
                   Lv.1-20
                 </div>
                 <div
-                  className={`myObject ${this.getObjectClassName(2)}`}
+                  className={`items-stat col-xxl-1 col-3 my-1 mx-1 px-3 col-1 myObject ${this.getObjectClassName(
+                    2
+                  )}`}
                   onClick={() => {
                     this.setSelectIndexStat(1);
                     this.handleObjectClick(2);
@@ -133,7 +139,9 @@ class CharacterMaterial extends React.Component {
                   Lv.20-40
                 </div>
                 <div
-                  className={`myObject ${this.getObjectClassName(3)}`}
+                  className={`items-stat col-xxl-1 col-3 my-1 mx-1 px-3 col-1 myObject ${this.getObjectClassName(
+                    3
+                  )}`}
                   onClick={() => {
                     this.setSelectIndexStat(2);
                     this.handleObjectClick(3);
@@ -142,7 +150,9 @@ class CharacterMaterial extends React.Component {
                   Lv.40-50
                 </div>
                 <div
-                  className={`myObject ${this.getObjectClassName(4)}`}
+                  className={` items-stat col-xxl-1 col-3 my-1 mx-1 px-3 col-1 myObject ${this.getObjectClassName(
+                    4
+                  )}`}
                   onClick={() => {
                     this.setSelectIndexStat(3);
                     this.handleObjectClick(4);
@@ -151,7 +161,9 @@ class CharacterMaterial extends React.Component {
                   Lv.50-60
                 </div>
                 <div
-                  className={`myObject ${this.getObjectClassName(5)}`}
+                  className={`items-stat col-xxl-1 col-3 my-1 mx-1 px-3 col-1 myObject ${this.getObjectClassName(
+                    5
+                  )}`}
                   onClick={() => {
                     this.setSelectIndexStat(4);
                     this.handleObjectClick(5);
@@ -160,7 +172,9 @@ class CharacterMaterial extends React.Component {
                   Lv.60-70
                 </div>
                 <div
-                  className={`myObject ${this.getObjectClassName(6)}`}
+                  className={`items-stat col-xxl-1 col-3 my-1 mx-1 px-3 col-1 myObject ${this.getObjectClassName(
+                    6
+                  )}`}
                   onClick={() => {
                     this.setSelectIndexStat(5);
                     this.handleObjectClick(6);
@@ -169,7 +183,9 @@ class CharacterMaterial extends React.Component {
                   Lv.70-80
                 </div>
                 <div
-                  className={`myObject ${this.getObjectClassName(7)}`}
+                  className={`items-stat col-xxl-1 col-3 my-1 mx-1 px-3 col-1 myObject ${this.getObjectClassName(
+                    7
+                  )}`}
                   onClick={() => {
                     this.setSelectIndexStat(6);
                     this.handleObjectClick(7);
@@ -263,8 +279,13 @@ class CharacterMaterial extends React.Component {
                                 <img src="https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/materials/mora.png?strip=all&quality=100&w=64"></img>
                                 <span> {item["cost"]}</span>
                               </div>
-
-                              <span> Mora</span>
+                              {isSmallScreen ? (
+                                <></>
+                              ) : (
+                                <>
+                                  <span> Mora</span>
+                                </>
+                              )}
                             </>
                           ) : (
                             <>
@@ -273,7 +294,13 @@ class CharacterMaterial extends React.Component {
                                 <span> 0</span>
                               </div>
 
-                              <span> Mora</span>
+                              {isSmallScreen ? (
+                                <></>
+                              ) : (
+                                <>
+                                  <span> Mora</span>
+                                </>
+                              )}
                             </>
                           )}
                         </div>
@@ -296,7 +323,11 @@ class CharacterMaterial extends React.Component {
                                   {item["mat1"] && item["mat1"]["amount"]}
                                 </span>
                               </div>
-                              {item["mat1"] && item["mat1"]["name"]}
+                              {isSmallScreen ? (
+                                <></>
+                              ) : (
+                                <>{item["mat1"] && item["mat1"]["name"]}</>
+                              )}
                               {/* {item["mat1"] && item["mat1"]["amount"]}{" "} */}
                             </>
                           ) : (
@@ -321,7 +352,12 @@ class CharacterMaterial extends React.Component {
                                   {item["mat2"] && item["mat2"]["amount"]}
                                 </span>
                               </div>
-                              {item["mat2"] && item["mat2"]["name"]}
+                              {isSmallScreen ? (
+                                <></>
+                              ) : (
+                                <> {item["mat2"] && item["mat2"]["name"]}</>
+                              )}
+
                               {/* {item["mat2"] && item["mat2"]["amount"]} */}
                             </>
                           ) : (
@@ -337,12 +373,18 @@ class CharacterMaterial extends React.Component {
                                     item["mat3"] && item["mat3"]["id"]
                                   )}`}
                                 ></img>
+
                                 <span>
                                   {" "}
                                   {item["mat3"] && item["mat3"]["amount"]}
                                 </span>
                               </div>
-                              {item["mat3"] && item["mat3"]["name"]}
+                              {isSmallScreen ? (
+                                <></>
+                              ) : (
+                                <> {item["mat3"] && item["mat3"]["name"]}</>
+                              )}
+
                               {/* {item["mat3"] && item["mat3"]["amount"]} */}
                             </>
                           ) : (
@@ -365,7 +407,11 @@ class CharacterMaterial extends React.Component {
                                   {item["mat4"] && item["mat4"]["amount"]}
                                 </span>
                               </div>
-                              {item["mat4"] && item["mat4"]["name"]}
+                              {isSmallScreen ? (
+                                <></>
+                              ) : (
+                                <> {item["mat4"] && item["mat4"]["name"]}</>
+                              )}
                               {/* {item["mat4"] && item["mat4"]["amount"]} */}
                             </>
                           ) : (
@@ -496,7 +542,7 @@ class CharacterMaterial extends React.Component {
                           ></img>
                           <span>{item.items[0].amount}</span>
                         </div>
-                        {item.items[0].name}
+                        {isSmallScreen ? <></> : <> {item.items[0].name}</>}
                       </div>
                     </div>
                     <div className="childContent">
@@ -509,7 +555,7 @@ class CharacterMaterial extends React.Component {
                           ></img>
                           <span>{item.items[1].amount}</span>
                         </div>
-                        {item.items[1].name}
+                        {isSmallScreen ? <></> : <> {item.items[1].name}</>}
                       </div>
                     </div>
                     <div className="childContent">
@@ -524,12 +570,17 @@ class CharacterMaterial extends React.Component {
                                 this.swapNameToImg(item.items[2].name)
                               }.png`}
                             ></img>
+
                             <span>{item.items[2] && item.items[2].amount}</span>
                           </div>
                         ) : (
                           <></>
                         )}
-                        {item.items[2] && item.items[2].name}{" "}
+                        {isSmallScreen ? (
+                          <></>
+                        ) : (
+                          <> {item.items[2] && item.items[2].name} </>
+                        )}
                       </div>
                     </div>
                     <div className="childContent">
@@ -543,7 +594,11 @@ class CharacterMaterial extends React.Component {
                         ) : (
                           <></>
                         )}
-                        {item.items[3] && item.items[3].name}{" "}
+                        {isSmallScreen ? (
+                          <></>
+                        ) : (
+                          <> {item.items[3] && item.items[3].name} </>
+                        )}
                       </div>
                     </div>
                   </div>
