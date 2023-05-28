@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./characterMaterial.scss";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 class CharacterMaterial extends React.Component {
   state = {
     characterName: "",
@@ -422,15 +422,10 @@ class CharacterMaterial extends React.Component {
                     </>
                   );
                 })}
-              <div className="materialTotal">
-                {/* {this.countAmounts(totalMaterial) &&
-                this.countAmounts(totalMaterial) &&
-                (total = this.countAmounts(totalMaterial))} */}
-                {/* {console.log("sum material", this.countAmounts(totalMaterial))} */}
-                {/* <div> */}
-                {/* {console.log("origin", totalMaterial)} */}
-                <span> Total:</span>
-                <div className="viewsTotal">
+
+              <div className="materialTotal d-flex col-12">
+                <span className="col-lg-1 col-2">Total</span>
+                <div className="col-lg-1 col-2 viewsTotal">
                   <img src="https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/materials/mora.png?strip=all&quality=100&w=64"></img>
 
                   <span> {totalMora}</span>
@@ -453,7 +448,7 @@ class CharacterMaterial extends React.Component {
                                     status = ite.status;
                                   // console.log(ite.status);
                                 })}
-                              <div className="viewsTotal">
+                              <div className="viewsTotal col-lg-1 col-2">
                                 <span>{item[1]}</span>
                                 <img
                                   src={`https://api.genshin.dev/materials/${status}/${this.swapNameToImg(
@@ -495,9 +490,7 @@ class CharacterMaterial extends React.Component {
                     item.items.map((inte, index) => {
                       {
                         let temp = {};
-                        // {
-                        //   console.log(this.swapNameToImg(inte.name));
-                        // }
+
                         temp = {
                           ...temp,
                           id: inte.name,
@@ -522,7 +515,7 @@ class CharacterMaterial extends React.Component {
                 return (
                   <div className="talentContent">
                     <div className="childContent">
-                      Lv.{item.level - 1} {"\u2192"} {item.level}
+                      Lv.{item.level - 1} -{item.level}
                     </div>
                     <div className="childContent">
                       <div className="imgtalent">
@@ -533,8 +526,8 @@ class CharacterMaterial extends React.Component {
                       </div>
                     </div>
                     <div className="childContent">
-                      <div className="imgtalent">
-                        <div className="img">
+                      <div className="imgtalent ">
+                        <div className="img ">
                           <img
                             src={`https://api.genshin.dev/materials/talent-book/${this.swapNameToImg(
                               item.items[0].id
@@ -604,25 +597,22 @@ class CharacterMaterial extends React.Component {
                   </div>
                 );
               })}
-            <div className="materialTotal">
-              <span> Total:</span>
-              <div className="viewsTotal">
+
+            <div className="materialTotal d-flex col-12">
+              <span className="col-lg-1 col-2">Total</span>
+              <div className="col-lg-1 col-2 viewsTotal">
                 <img src="https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/materials/mora.png?strip=all&quality=100&w=64"></img>
 
-                <span> {talentTotalMora}</span>
+                <span> {totalMora}</span>
               </div>
 
               {Object.entries(this.countAmounts(totalTalentMaterial)) &&
                 Object.entries(this.countAmounts(totalTalentMaterial)).map(
                   (item, index) => {
-                    // console.log(item);
-
                     return (
                       <>
-                        {/* {index !== 0 ? ( */}
                         <>
                           {" "}
-                          {/* {console.log(totalTalentMaterial)} */}
                           {totalTalentMaterial &&
                             totalTalentMaterial.length > 0 &&
                             totalTalentMaterial.map((ite, index) => {
@@ -630,8 +620,8 @@ class CharacterMaterial extends React.Component {
                                 status = ite.status;
                               // console.log(ite.status);
                             })}
-                          {console.log(item && item)}
-                          <div className="viewsTotal">
+                          {/* {console.log(item && item)} */}
+                          <div className="viewsTotal col-lg-1 col-2">
                             <span>{item[1]}</span>
                             <img
                               src={`https://api.genshin.dev/materials/${status}/${this.swapNameToImg(

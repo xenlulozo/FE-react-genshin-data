@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 
 import ChildWeapon from "./ChildWeapon";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class Weapon extends React.Component {
   state = {
@@ -30,7 +31,7 @@ class Weapon extends React.Component {
     // console.log("parent", weapon);
     return (
       <>
-        <div className="weaponContainer">
+        <div className="container col-12 ">
           {weapon &&
             weapon.length > 0 &&
             weapon.map((item, index) => {

@@ -1,27 +1,27 @@
-// 
-.contanerWeapon{
+//
+.contanerWeapon {
     // text-align: center;
-     .materialContainer{
+    .materialContainer {
         border-radius: 7px;
         font-size: 20px;
         padding: 50px;
         width: 80%;
         //  border: 1px solid red;
-         margin: 0 auto;
-         .containerMaterial{
-            .containerChild{
-              
+        margin: 0 auto;
+        .containerMaterial {
+            .containerChild {
                 display: flex;
-            justify-content: space-around;
-            // border: 1px solid red;
-                .imageContent{
+                justify-content: space-around;
+                // border: 1px solid red;
+                .imageContent {
                     border-radius: 5px;
                     background-repeat: no-repeat;
                     background-size: cover; /* Lấp đầy kích thước của div */
                     background-position: center center; /* Đặt ảnh vào giữa div */
                     position: relative;
                     text-align: center;
-                    .sumMaterial{
+
+                    .sumMaterial {
                         position: absolute;
                         bottom: 0%;
                         left: 0%;
@@ -30,20 +30,19 @@
                         font-size: 13px;
                     }
                 }
-             
             }
-         }
-         .listMaterial:nth-child(even){
-            background-color: rgba( #9ca3af,0.1);
+        }
+        .listMaterial:nth-child(even) {
+            background-color: rgba(#9ca3af, 0.1);
             // color: #9ca3af;
-         }
-         .listMaterial{
+        }
+        .listMaterial {
             // min-height: 50%;
             height: 71px;
             // border: 1px solid red;
             // margin-top: 1%;
             display: flex;
-            justify-content:space-around;
+            justify-content: space-around;
             align-items: center;
             flex-wrap: nowrap;
             // width: 50%;
@@ -51,11 +50,11 @@
             // span{
             //     margin: 0% 1% 0% 1%;
             // }
-            .mora{
+            .mora {
                 display: flex;
                 align-items: center;
-                
-                .imageContent{
+
+                .imageContent {
                     background-repeat: no-repeat;
                     background-size: cover; /* Lấp đầy kích thước của div */
                     background-position: center center; /* Đặt ảnh vào giữa div */
@@ -65,10 +64,10 @@
                     position: relative;
                     align-items: center;
                     margin-right: 2%;
-                    img{
+                    img {
                         width: 100%;
                     }
-                    span{
+                    span {
                         position: absolute;
                         bottom: 0%;
                         left: 0%;
@@ -76,13 +75,13 @@
                         height: 30%;
                         text-align: center;
                         font-size: 15px;
-                        
-                        background-color: rgba(35,39,52,0.8);
+
+                        background-color: rgba(35, 39, 52, 0.8);
                     }
                 }
             }
-          
-            .containerChild{
+
+            .containerChild {
                 // border: 1px solid blue;
                 display: flex;
                 height: 100%;
@@ -90,10 +89,10 @@
                 width: 20%;
                 text-align: left;
                 // width: 10%;
-                .materialList{
+                .materialList {
                     display: flex;
                     align-items: center;
-                    .imageContent{
+                    .imageContent {
                         background-repeat: no-repeat;
                         background-size: cover; /* Lấp đầy kích thước của div */
                         background-position: center center; /* Đặt ảnh vào giữa div */
@@ -102,13 +101,13 @@
                         // height: 10%;
                         position: relative;
                         // display: flex;
-                   border-radius: 5px;
-                  
+                        border-radius: 5px;
+
                         margin-right: 2%;
-                        img{
+                        img {
                             width: 100%;
                         }
-                        span{
+                        span {
                             position: absolute;
                             bottom: 0%;
                             left: 0%;
@@ -117,102 +116,98 @@
                             text-align: center;
                             font-size: 15px;
                             // border: 1px solid   rgba(35,39,52);;
-                            background-color: rgba(35,39,52,0.8);
-                            
+                            background-color: rgba(35, 39, 52, 0.8);
                         }
                     }
                 }
-             }
-           
-         }
-     }
-    
-        .detailWeaponBase{
-            padding-top: 50px;
-            // border: 1px solid red;
-            display: flex;
-            font-size: 20px;
+            }
+        }
+    }
+
+    .detailWeaponBase {
+        // padding-top: 50px;
+        // border: 1px solid red;
+        // display: flex;
+        font-size: 20px;
+        flex-wrap: wrap;
+        // position: relative;
+        // width: 80%;
+
+        margin: 0 auto;
+        justify-content: space-between;
+        .titleAndControler {
             // position: relative;
-            width: 80%;
-           
-            margin: 0 auto;
-            justify-content:space-between;
-            .titleAndControler{
-                // position: relative;
+            // border: 1px solid red;
+            width: 100%;
+            // height: 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h2 {
+                // position: absolute;
+                margin: 0;
+                left: 0%;
+                font-weight: normal;
+                margin-left: 2%;
                 // border: 1px solid red;
-                width:100%;
-                // height: 10%;
+            }
+            div {
+                margin-right: 2%;
+                // position: absolute;
+                right: 0%;
+                // border: 1px solid red;
+                height: 1%;
+                button {
+                    border-radius: 5px;
+                    width: 30px;
+                    height: 30px;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+            }
+        }
+        .leftContent {
+            // display: flex;
+            // border: 1px solid yellow;
+            // width: 49%;
+            .contentLeftWeapon {
+                background-color: rgba(35, 39, 52);
+                color: #9ca3af;
                 display: flex;
-                justify-content:space-between;
+                // border: 1px solid red;
+                border-radius: 5px;
+                width: 100%;
+                //    position: absolute;
+                left: 0%;
+                // min-width: 50%;
+                // justify-content: space-between;
+                flex-wrap: wrap;
+                text-align: left;
                 align-items: center;
-                h2{
-                    // position: absolute;
-                    margin: 0;
-                    left: 0%;
-                    font-weight: normal;
-                    margin-left: 2%;
-                    // border: 1px solid red;
-                }
-                div{
-                    margin-right    : 2%;
-                    // position: absolute;
-                    right: 0%;
-                    // border: 1px solid red;
-                    height: 1%;
-                    button{
-                        border-radius: 5px;
-                        width: 30px;
-                        height: 30px;
-                        margin-left: 5px;
-                        margin-right: 5px;
-                    }
+                span {
+                    flex-basis: calc(40% - 10px); /* Thiết lập chiều rộng phần tử */
+                    margin: 0% 4% 1% 4%;
+                    // padding-left: 10px;
                 }
             }
-            .leftContent{
-                // display: flex;
-                // border: 1px solid yellow;
-                width: 49%;
-                .contentLeftWeapon{
-                    background-color: rgba(35,39,52);
-                    color: #9ca3af;
-                    display: flex;
-                    // border: 1px solid red;
-                    border-radius: 5px;
-                    width: 100%;
-                //    position: absolute;
-                   left: 0%;
-                    // min-width: 50%;
-                    // justify-content: space-between;
-                    flex-wrap: wrap;
-                    text-align: left;
-                    align-items: center;
-                    span{
-                        flex-basis: calc(40% - 10px); /* Thiết lập chiều rộng phần tử */
-                        margin:0% 4% 1% 4%; 
-                        // padding-left: 10px;
-                    }
-                
-                 }
-            }
-           
-             .rightContent{
-                // border: 1px solid yellow;
-                // position: relative;
-                // display: flex;
-                width: 49%;
-                .contentRightWeapon{
-                    background-color: rgba(35,39,52);
+        }
+
+        .rightContent {
+            // border: 1px solid yellow;
+            // position: relative;
+            // display: flex;
+            // width: 49%;
+            .contentRightWeapon {
+                background-color: rgba(35, 39, 52);
                 //    max-width: 49%;
-                 
+
                 //    position: absolute;
-              
+
                 //    right: 0%;
-                    color: #9ca3af;
-                    border-radius: 5px;
-                 }
-                 
-             }
-         
+                color: #9ca3af;
+                border-radius: 5px;
+            }
+        }
     }
 
     .star {
@@ -222,52 +217,149 @@
         display: inline-block;
         color: #ffffff;
         text-shadow: 1px 1px #ffffff;
-      }
-      
-      .star:before {
+    }
+
+    .star:before {
         content: "★";
-      }
-      
-    .titleWeapon{
+    }
+
+    .titleWeapon {
         padding-top: 50px;
         // border: 1px solid red;
         display: flex;
-        width: 80%;
+        // width: 80%;
+        flex-wrap: wrap;
         margin: 0 auto;
-        .imageWeapon{
-        // border: 1px solid red;
-        width: 224px; /* Kích thước của div */
-        // height: 224px;
-        border-radius: 7px;
-        background-repeat: no-repeat;
-        background-size: cover; /* Lấp đầy kích thước của div */
-        background-position: center center; /* Đặt ảnh vào giữa div */
-        // height: 64px;
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Lấp đầy kích thước của div */
-            object-position: center center;
+        .imageWeapon {
+            // border: 1px solid red;
+            // width: 224px; /* Kích thước của div */
+            // height: 224px;
+            border-radius: 7px;
+            background-repeat: no-repeat;
+            background-size: cover; /* Lấp đầy kích thước của div */
+            background-position: center center; /* Đặt ảnh vào giữa div */
+            // height: 64px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Lấp đầy kích thước của div */
+                object-position: center center;
+            }
         }
-        }
-        .detailWeapon{
+        .detailWeapon {
             text-align: left;
-            h1{
+            h1 {
                 margin: 0;
                 padding-left: 4%;
                 font-size: 36px;
                 font-weight: normal;
-                span{
+                color: #ffffff;
+                span {
                     margin: 0;
                 }
-                  
             }
-            ul{
-                li{
+            ul {
+                li {
                     list-style: none;
                     color: #9ca3af;
                 }
             }
         }
     }
+    .talentContent {
+        color: #9ca3af;
+        font-size: 20px;
+
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        background-color: rgba(#2c313f, 1);
+        .imgtalent {
+            // border: 1px solid  red;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            .imageContent-flex {
+                position: relative;
+                img {
+                    width: 100%;
+                }
+                span {
+                    position: absolute;
+                    bottom: 0%;
+                    left: 0%;
+                    width: 100%;
+                    text-align: center;
+                    background-color: rgba(#2c313f, 0.7);
+                }
+            }
+            .childContent {
+                // min-height: 100px;
+                // background-color: yellow;
+                // border: 1px solid yellow;
+                display: flex;
+                align-items: center;
+                // text-align: center;
+                justify-content: center;
+
+                .imgMora {
+                    position: relative;
+                    // border: 1px solid red;
+
+                    span {
+                        position: absolute;
+                        // border: 1px solid red;
+                        text-align: center;
+
+                        left: 0%;
+                        width: 100%;
+                        bottom: 0%;
+                    }
+                }
+                .img {
+                    // border: 1px solid yellow;
+
+                    width: 30%;
+                    position: relative;
+                    // padding-left: 5px;
+                    img {
+                        width: 100%;
+                    }
+                    span {
+                        position: absolute;
+                        text-align: center;
+                        width: 100%;
+                        left: 0%;
+                        bottom: 0%;
+                    }
+                }
+            }
+        }
+
+        // .childContent:nth-child(3) {
+        //     grid-column: 3 / span 2;
+        // }
+        // .childContent:nth-child(4) {
+        //     grid-column: 5 / span 2;
+        // }
+        // .childContent:nth-child(5) {
+        //     grid-column: 7 / span 2;
+        // }
+        // .childContent:nth-child(6) {
+        //     grid-column: 9 / span 2;
+        // }
+        // .childContent:nth-child(11) {
+        //     grid-row: 2;
+        //     grid-column: 3 / span 2;
+        // }
+        // .childContent:nth-child(12) {
+        //     grid-row: 2;
+
+        //     grid-column: 5 / span 2;
+        // }
+    }
+
+    // .imgtalent:nth-child(odd) {
+    //     background-color: rgba(35, 39, 52, 1);
+    // }
 }

@@ -1,28 +1,46 @@
-.totalMaterial{
-    display: flex;
-    // width: 80%;
-    border: 1px solid yellow;
-    justify-content: space-around;
-    .imageContent{
-        width: 60%;
-        height: 100%;
-        border: 1px solid blue;
-        border-radius: 5px;
-        background-repeat: no-repeat;
-        background-size: cover; /* Lấp đầy kích thước của div */
-        background-position: center center; /* Đặt ảnh vào giữa div */
-        // position: relative;
-        // text-align: center;
-      img{
-        width: 100%;
-      }
-      span{
+.total-material {
+  flex-wrap: wrap;
+  .item-material {
+    img {
+      width: 80%;
+    }
+    .imageContent {
+      position: relative;
+      span {
         position: absolute;
         width: 100%;
-        left: 0%;
         bottom: 0%;
-        background-color: rgba(black, 0.2);
-        font-size: 15px;
+        left: 0%;
       }
     }
+  }
+}
+
+.totalMaterial {
+  display: flex;
+  // width: 80%;
+  border: 1px solid yellow;
+  justify-content: space-around;
+  .imageContent {
+    width: 60%;
+    height: 100%;
+    border: 1px solid blue;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: cover; /* Lấp đầy kích thước của div */
+    background-position: center center; /* Đặt ảnh vào giữa div */
+    // position: relative;
+    // text-align: center;
+    img {
+      width: 100%;
+    }
+    span {
+      position: absolute;
+      width: 100%;
+      left: 0%;
+      bottom: 0%;
+      background-color: rgba(black, 0.2);
+      font-size: 15px;
+    }
+  }
 }
