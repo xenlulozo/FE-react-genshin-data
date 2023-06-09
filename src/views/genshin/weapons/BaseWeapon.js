@@ -57,7 +57,7 @@ class BaseWeapon extends React.Component {
     let name = this.props.match.params.weapon.replace(/-/g, "_");
     let cnt = [];
     let list = await axios.get(
-      `https://genshin-builds.com/_next/data/vLisg9Szv-n-2aBZeviKc/en/weapon/${name}.json`
+      `https://genshin-builds.com/_next/data/p7stA01xgfDnkhGcCmMxJ/en/weapon/${name}.json`
     );
 
     this.setState({
