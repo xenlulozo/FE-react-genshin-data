@@ -37,16 +37,16 @@ class ChildWeapon extends React.Component {
       <>
         {/* {console.log(weapon)}{" "} */}
         <div
-          className="container"
+          className="container1 "
           onClick={() => {
             this.handelBaseWeapon(this.props.weapon);
           }}
         >
           {/* {console.log(weapon)} */}
-          <div className="weaponContent">
+          <div className="weaponContent  col-12 d-flex my-2">
             {/* <img src="https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/bg_4star.png?strip=all&quality=100"></img> */}
             <div
-              className="backImage"
+              className="backImage col-2"
               style={{
                 backgroundImage: `url(https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/bg_${weapon.rarity}star.png?strip=all&quality=100)`,
               }}
@@ -55,7 +55,7 @@ class ChildWeapon extends React.Component {
                 src={`https://api.genshin.dev/weapons/${name}/icon.png`}
                 // src={`https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/weapons/${name}.png?strip=all&quality=100&w=208`}
               ></img>
-              {weapon.rarity == 5 ? (
+              {/* {weapon.rarity == 5 ? (
                 <>
                   <div className="contentStar">
                     <span className="star"></span>
@@ -83,10 +83,10 @@ class ChildWeapon extends React.Component {
                     <span className="star"></span>
                   </div>
                 </>
-              )}
+              )} */}
             </div>
 
-            <div className="textContent">
+            <div className="textContent px-4 col-10">
               <h3>{weapon.name}</h3>
               <span>
                 Type: {weapon.type} | BaseAttack: {weapon.baseAttack} |SubStat :{" "}

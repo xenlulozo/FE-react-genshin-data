@@ -39,7 +39,7 @@ class AyakaInfo extends React.Component {
       });
     await axios
       .get(
-        `https://genshin-builds.com/_next/data/jZHEk4BPFIAIlj0Ym6krL/en/character/${this.state.characterName}.json`
+        `https://genshin-builds.com/_next/data/p7stA01xgfDnkhGcCmMxJ/en/character/${this.state.characterName}.json`
       )
       .then((response) => {
         this.setState({ ayaka: response.data });
@@ -82,7 +82,8 @@ class AyakaInfo extends React.Component {
       <div>
         {/* {console.log(ayaka.pageProps.character)} */}
         {/* {ayaka.pageProps.character.skills[0].description} */}
-        <div className="listBaseSkillContent">
+
+        <div className="listBaseSkillContent ">
           <div className="button">
             <button
               type="button"

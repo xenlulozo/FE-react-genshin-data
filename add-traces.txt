@@ -1,0 +1,75 @@
+
+
+"traces": [
+                            {
+                                "req": "A2",
+                                "desc": "Gepard has a higher chance to be attacked by enemies.",
+                                "name": "Integrity"
+                                "sub_nodes": [
+                                    {
+                                        "req": "A2",
+                                        "stat": "Effect RES
+",
+                                        "value": "4"
+                                    },
+                                    {
+                                        "req": "A3",
+                                        "stat": "Ice DMG",
+                                        "value": "3.2"
+                                    }, 
+				
+ 				  
+ 				  
+                                    
+                                ]
+                            },
+                            {
+                                "req": "A4",
+                                "desc": "When Unyielding Will is triggered, Gepard's Energy will be restored to 100%.",
+                                "name": "Commander",
+                                "sub_nodes": [
+                                    {
+                                        "req": "A4",
+                                        "stat": "Ice DMG",
+                                        "value": "4.8"
+                                    },
+                                    {
+                                        "req": "A5",
+                                        "stat": "Effect RES",
+                                        "value": "6"
+                                  }
+                                
+                                ]
+                            },
+                            {
+                                "req": "A6",
+                                "desc": "Gepard's ATK increases by 35% of his current DEF. This effect will refresh at the start of each turn.",
+                                "name": "Fighting Spirit",
+                                "sub_nodes": [
+                                    {
+                                        "req": "A6",
+                                        "stat": "DEF
+",
+                                        "value": "7.5"
+                                    },
+                                    {
+                                        "req": "Lv. 75",
+                                        "stat": "Effect RES
+
+",
+                                        "value": "8"
+                                    },
+ {
+                                        "req": "Lv. 80",
+                                        "stat": "Ice DMG
+",
+                                        "value": "6.4"
+                                    }
+                                ]
+                            }
+                        ],
+}
+
+
+				   
+                      

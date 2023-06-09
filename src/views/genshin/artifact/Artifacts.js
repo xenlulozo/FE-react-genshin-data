@@ -13,7 +13,7 @@ class Artifacts extends React.Component {
       baseArtifact: {},
       selectedObject: null,
       style: {
-        // "& .artifaceContent": {
+        // "& .artifaceContent col-3": {
         // font-weight: bold;
         backgroundColor: "blue",
         // },
@@ -48,7 +48,7 @@ class Artifacts extends React.Component {
     //   // position: "absolute",
     //   style: {
     //     // ...this.state.style,
-    //     // " .artifaceContent :nthChild(1)": {
+    //     // " .artifaceContent col-3 :nthChild(1)": {
     //     backgroundColor: "blue",
     //     // },
     //   },
@@ -62,107 +62,109 @@ class Artifacts extends React.Component {
     arr = Object.entries(this.state.artifact);
     let data = {};
     //   const styletest = `
-    //   .artifaceContent:nth-child(${index}) {
+    //   .artifaceContent col-3:nth-child(${index}) {
     //     background-color: blue;
     //   }
     // `;
     return (
       <>
-        {/* <h1>Artifacts</h1> */}
-        <div className="artifactContainer">
-          {arr &&
-            arr.length > 0 &&
-            arr.map((item, index) => {
-              return (
-                <>
-                  {item[1].includes("prayers") ? (
-                    <>
-                      <div
-                        className="artifaceContent"
-                        // style={style}
-                        onClick={() => this.handleObjectClick(index)}
-                      >
-                        <span>{item[1]}</span>
-                        <div className="listImage">
-                          <img
-                            className="imgOfArtifact"
-                            src={`https://api.genshin.dev/artifacts/${item[1]}/circlet-of-logos.png`}
-                            // alt="Err"
-                          ></img>
-                          <img
-                            className="imgOfArtifact"
-                            src={`https://api.genshin.dev/artifacts/${item[1]}/circlet-of-logos.png`}
-                            // alt="Err"
-                          ></img>
-                        </div>
+        <div className="container">
+          <div className="artifactContainer col-12">
+            {arr &&
+              arr.length > 0 &&
+              arr.map((item, index) => {
+                return (
+                  <>
+                    {item[1].includes("prayers") ? (
+                      <>
                         <div
-                          className="valueOfArtifact"
-                          //   onClick={() => this.getDataOfArtifact(item[1])}
+                          className="artifaceContent col-12 col-lg-3 my-2 mx-2"
+                          // style={style}
+                          onClick={() => this.handleObjectClick(index)}
                         >
-                          <BaseArtifact artifact={item} />
-                          {/* {this.getDataOfArtifact(item[1])} */}
-                          {/* {console.log(data)} */}
+                          <span>{item[1]}</span>
+                          <div className="listImage">
+                            <img
+                              className="imgOfArtifact"
+                              src={`https://api.genshin.dev/artifacts/${item[1]}/circlet-of-logos.png`}
+                              // alt="Err"
+                            ></img>
+                            <img
+                              className="imgOfArtifact"
+                              src={`https://api.genshin.dev/artifacts/${item[1]}/circlet-of-logos.png`}
+                              // alt="Err"
+                            ></img>
+                          </div>
+                          <div
+                            className="valueOfArtifact"
+                            //   onClick={() => this.getDataOfArtifact(item[1])}
+                          >
+                            <BaseArtifact artifact={item} />
+                            {/* {this.getDataOfArtifact(item[1])} */}
+                            {/* {console.log(data)} */}
+                          </div>
                         </div>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      {/* <div
+                      </>
+                    ) : (
+                      <>
+                        {/* <div
                         className={`myObject ${this.getObjectClassName(1)}`}
                         onClick={() => this.handleObjectClick(1)}
                       > */}
-                      <div
-                        className={`artifaceContent ${this.getObjectClassName(
-                          index
-                        )}`}
-                        // style={style}
-                        onClick={() => this.handleObjectClick(index)}
-                      >
-                        <span>{item[1]}</span>
-                        <div className="listImage">
-                          <img
-                            className="imgOfArtifact"
-                            src={`https://api.genshin.dev/artifacts/${item[1]}/flower-of-life`}
-                            // alt="Err"
-                          ></img>
-                          <img
-                            className="imgOfArtifact"
-                            src={`https://api.genshin.dev/artifacts/${item[1]}/goblet-of-eonothem`}
-                            // alt="Err"
-                          ></img>
-                          <img
-                            className="imgOfArtifact"
-                            src={`https://api.genshin.dev/artifacts/${item[1]}/plume-of-death`}
-                            // alt="Err"
-                          ></img>
-                          <img
-                            className="imgOfArtifact"
-                            src={`https://api.genshin.dev/artifacts/${item[1]}/sands-of-eon`}
-                            // alt="Err"
-                          ></img>
-                          <img
-                            className="imgOfArtifact"
-                            src={`https://api.genshin.dev/artifacts/${item[1]}/circlet-of-logos`}
-                            // alt="Err"
-                          ></img>
-                        </div>
                         <div
-                          className="valueOfArtifact"
-                          //   onClick={() => this.getDataOfArtifact(item[1])}
+                          className={`artifaceContent col-12 col-lg-3 my-2 mx-2 ${this.getObjectClassName(
+                            index
+                          )}`}
+                          // style={style}
+                          onClick={() => this.handleObjectClick(index)}
                         >
-                          <BaseArtifact artifact={item} />
-                          {/* {this.getDataOfArtifact(item[1])} */}
-                          {/* {console.log(data)} */}
+                          <span>{item[1]}</span>
+                          <div className="listImage">
+                            <img
+                              className="imgOfArtifact"
+                              src={`https://api.genshin.dev/artifacts/${item[1]}/flower-of-life`}
+                              // alt="Err"
+                            ></img>
+                            <img
+                              className="imgOfArtifact"
+                              src={`https://api.genshin.dev/artifacts/${item[1]}/goblet-of-eonothem`}
+                              // alt="Err"
+                            ></img>
+                            <img
+                              className="imgOfArtifact"
+                              src={`https://api.genshin.dev/artifacts/${item[1]}/plume-of-death`}
+                              // alt="Err"
+                            ></img>
+                            <img
+                              className="imgOfArtifact"
+                              src={`https://api.genshin.dev/artifacts/${item[1]}/sands-of-eon`}
+                              // alt="Err"
+                            ></img>
+                            <img
+                              className="imgOfArtifact"
+                              src={`https://api.genshin.dev/artifacts/${item[1]}/circlet-of-logos`}
+                              // alt="Err"
+                            ></img>
+                          </div>
+                          <div
+                            className="valueOfArtifact"
+                            //   onClick={() => this.getDataOfArtifact(item[1])}
+                          >
+                            <BaseArtifact artifact={item} />
+                            {/* {this.getDataOfArtifact(item[1])} */}
+                            {/* {console.log(data)} */}
+                          </div>
                         </div>
-                      </div>
-                      {/* </div> */}
-                    </>
-                  )}
-                </>
-              );
-            })}
+                        {/* </div> */}
+                      </>
+                    )}
+                  </>
+                );
+              })}
+          </div>
+          <br />
         </div>
-        <br />
+        {/* <h1>Artifacts</h1> */}
       </>
     );
   }

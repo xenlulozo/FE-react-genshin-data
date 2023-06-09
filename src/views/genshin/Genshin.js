@@ -7,6 +7,7 @@ import { useHistory } from "react-router";
 import Testapi from "./Testapi";
 
 import CharacterMaterial from "./CharacterMaterial";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class Genshin extends React.Component {
   state = {
@@ -16,7 +17,9 @@ class Genshin extends React.Component {
     statusSkill2: 0,
     statusSkill3: 0,
     statusSkill4: 0,
+    isSmallScreen: window.innerWidth < 768,
   };
+
   // history = useHistory();
   // refeshPage = () => {
   //   // then add this to the function that is called for re-rendering
@@ -79,9 +82,16 @@ class Genshin extends React.Component {
       statusSkill4: 0,
     });
   };
+
   render() {
-    let { character, statusSkill1, statusSkill2, statusSkill3, statusSkill4 } =
-      this.state;
+    let {
+      isSmallScreen,
+      character,
+      statusSkill1,
+      statusSkill2,
+      statusSkill3,
+      statusSkill4,
+    } = this.state;
 
     let skillTalents = [];
     let numSkill;
@@ -100,32 +110,62 @@ class Genshin extends React.Component {
           className="char_back"
           src={`https://api.genshin.dev/characters/${nameCharacter}/gacha-splash.png`}
         ></img>
+        {isSmallScreen ? (
+          <>
+            <div className="container">
+              <div className="pf-sm col-12" style={{ zindex: "10000" }}>
+                <div className="col-5">
+                  <img
+                    className="avarta"
+                    src={`https://api.genshin.dev/characters/${nameCharacter}/icon-big.png`}
+                  ></img>
+                </div>
 
-        <div className="pf">
-          <img
-            className="avarta"
-            src={`https://api.genshin.dev/characters/${nameCharacter}/icon-big.png`}
-          ></img>
+                <div className="desc col-7">
+                  <h1> {character.name} </h1>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            {" "}
+            <div className="pf">
+              <img
+                className="avarta"
+                src={`https://api.genshin.dev/characters/${nameCharacter}/icon-big.png`}
+              ></img>
 
-          <div className="description">
-            <h1> {character.name}</h1>
-            <p> {character.description} </p>
-          </div>
-        </div>
+              <div className="description">
+                <h1> {character.name}</h1> <p> {character.description} </p>
+              </div>
+            </div>
+          </>
+        )}
+
         <div className="charRacterContent">
           <h2> Skill</h2>
 
-          <div className="con">
+          <div
+            className="con col-12 d-xxl-flex "
+            // style={isSmallScreen ? { fontSize: "25px" } : null}
+          >
             {/* <div className="skill"> */}
             {skillTalents &&
               skillTalents.length > 0 &&
               skillTalents.map((item, index) => {
                 return (
                   <>
-                    <div className="skill">
-                      {index == 0 ? (
+                    {/* <div className=" col-12 col-xxl-4"></div> */}
+                    <div
+                      className="skill col-12 col-xxl-4 "
+                      style={
+                        isSmallScreen ? { width: "100%" } : { width: "32%" }
+                      }
+                    >
+                      {index === 0 ? (
                         <>
-                          {statusSkill1 == 0 ? (
+                          {statusSkill1 === 0 ? (
                             <>
                               <div
                                 className="baseContent"
@@ -294,7 +334,7 @@ class Genshin extends React.Component {
 
           <h2> passiveTalents</h2>
 
-          <div className="con">
+          <div className="con col-12 d-xxl-flex">
             {character.passiveTalents &&
               character.passiveTalents.length > 0 &&
               character.passiveTalents.map((item, index) => {
@@ -306,7 +346,12 @@ class Genshin extends React.Component {
                   ".png";
                 return (
                   <>
-                    <div className="passive">
+                    <div
+                      className="passive col-12 col-xxl-4  my-3"
+                      style={
+                        isSmallScreen ? { width: "100%" } : { width: "32%" }
+                      }
+                    >
                       {/* <div
                         className="img"
                         style={{
@@ -326,7 +371,7 @@ class Genshin extends React.Component {
               })}
           </div>
           <h2> constellations</h2>
-          <div className="con">
+          <div className="con col-12 d-xxl-flex">
             {character.constellations &&
               character.constellations.length > 0 &&
               character.constellations.map((item, index) => {
@@ -338,7 +383,12 @@ class Genshin extends React.Component {
                   ".png";
                 return (
                   <>
-                    <div className="star">
+                    <div
+                      className="star col-12 col-xxl-4"
+                      style={
+                        isSmallScreen ? { width: "100%" } : { width: "32%" }
+                      }
+                    >
                       <span>{item.name} </span>
                       <p> {item.description}</p>
                       <img src={source}></img>

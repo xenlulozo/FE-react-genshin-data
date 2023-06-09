@@ -1,5 +1,7 @@
 import React from "react";
-
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import "./detailTotalMaterial.scss";
 class DetailMaterial extends React.Component {
   state = {
@@ -32,21 +34,31 @@ class DetailMaterial extends React.Component {
     return name;
   };
   render() {
-    // console.log(this.swapName("Coral Branch of a Distant Sea"));
     let { count } = this.state;
     let { origin } = this.props;
     let rarity;
     let status = "";
-    // console.log(origin);
-    // {
-    //   console.log(Object.values(origin).indexOf("Concealed Talon"));
-    // }
+
     return (
       <>
-        <div className="totalMaterial">
-          {/* {console.log(count)} */}
+        <div className="total-material col-12 d-flex">
+          <div className="col-1">Total:</div>
+          <div className="col-lg-1 col-2">
+            {" "}
+            <div
+              className="imageContent"
+              // style={{
+              //   backgroundImage: `url(
+              //                 https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/bg_1star.png?strip=all&quality=100&w=32
+              //               )`,
+              // }}
+            >
+              <img src="https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/materials/mora.png?strip=all&quality=100&w=64"></img>
+              <span className="sumMaterial"> {this.props.mora}</span>
+            </div>{" "}
+          </div>
           {Object.keys(count).map((name) => (
-            <div key={name}>
+            <div className="item-material col-lg-1 col-2" key={name}>
               {/* {console.log(name)} */}
               {origin &&
                 origin.length > 0 &&
@@ -55,7 +67,7 @@ class DetailMaterial extends React.Component {
                     status = item.status;
                   }
                 })}
-              {/* {console.log(Object.values(item).includes(name), name)} */}
+
               <div
                 className="imageContent"
                 style={{
@@ -74,6 +86,28 @@ class DetailMaterial extends React.Component {
             </div>
           ))}
         </div>
+        {/* <Container>
+          <Row>
+            <Col>Total: </Col>
+            <Col>
+              {" "}
+              <div
+                className="imageContent"
+                style={{
+                  backgroundImage: `url(
+                              https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/bg_1star.png?strip=all&quality=100&w=32
+                            )`,
+                }}
+              >
+                <img src="https://i2.wp.com/gi-builds.sfo3.digitaloceanspaces.com/materials/mora.png?strip=all&quality=100&w=64"></img>
+                <span className="sumMaterial"> {this.props.mora}</span>
+              </div>{" "}
+            </Col>
+   
+
+    
+          </Row>
+        </Container> */}
       </>
     );
   }
