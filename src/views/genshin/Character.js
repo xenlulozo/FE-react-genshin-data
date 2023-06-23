@@ -95,7 +95,7 @@ class Character extends React.Component {
     // char = char.toLowerCase();
     axios
       .get(
-        `https://genshin-builds.com/_next/data/AxXQmod3sdYBP0OjxQ5rz/en/character/kamisato_ayaka.json`
+        `https://genshin-builds.com/_next/data/t-3za07CINgpxksv7XexN/en/character/kamisato_ayaka.json`
       )
       .then((response) => {
         let dataSkill = response.data;

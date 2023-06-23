@@ -112,9 +112,9 @@ class Genshin extends React.Component {
         ></img>
         {isSmallScreen ? (
           <>
-            <div className="container">
+            <div className="container my-3">
               <div className="pf-sm col-12" style={{ zindex: "10000" }}>
-                <div className="col-5">
+                <div className="col-3">
                   <img
                     className="avarta"
                     src={`https://api.genshin.dev/characters/${nameCharacter}/icon-big.png`}
@@ -136,7 +136,7 @@ class Genshin extends React.Component {
                 src={`https://api.genshin.dev/characters/${nameCharacter}/icon-big.png`}
               ></img>
 
-              <div className="description">
+              <div className="description mx-3">
                 <h1> {character.name}</h1> <p> {character.description} </p>
               </div>
             </div>
